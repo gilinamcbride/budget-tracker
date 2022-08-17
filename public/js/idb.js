@@ -18,10 +18,10 @@ request.onerror = function (event) {
   console.log(event.target.errorCode);
 };
 
-function saveRecord(data) {
+function saveRecord(record) {
   const transaction = db.transaction(["new_transaction"], "readwrite");
   const budgetObjectStore = transaction.objectStore("new_transaction");
-  budgetObjectStore.add(data);
+  budgetObjectStore.add(record);
 }
 
 function uploadTracker() {
